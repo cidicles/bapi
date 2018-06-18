@@ -1,0 +1,266 @@
+[
+  {
+    "type": "post",
+    "url": "/bet",
+    "title": "Create a new Bet",
+    "name": "Create_a_Bet",
+    "group": "Bets",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name of the Bet.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "locale",
+            "description": "<p>Locale of the Bet.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "currency",
+            "description": "<p>Currency of the Bet.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Float",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>Amount of the Bet.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "authenticated"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success:",
+          "content": "HTTP/1.1 200 OK\n  {\n      \"__v\": 0,\n      \"creator\": \"test\",\n      \"name\": \"Amount Sample Float\",\n      \"amount\": 10.01,\n      \"recipient\": \"5b2719c10ea1df53b0e19b90\",\n      \"_id\": \"5b27183945c44053c4992048\",\n      \"locale\": [\n          \"en_us\"\n      ],\n      \"created_date\": \"2018-06-18T02:26:01.380Z\",\n      \"currency\": [\n          \"usd\"\n      ],\n      \"status\": [\n          \"unresolved\"\n      ]\n  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/controllers/betController.js",
+    "groupTitle": "Bets"
+  },
+  {
+    "type": "delete",
+    "url": "/bet/:collectionId",
+    "title": "Delete a Bet",
+    "name": "Delete_a_Bet",
+    "group": "Bets",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "collectionId",
+            "description": "<p>Id of the Bet.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "authenticated creator"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "api/controllers/betController.js",
+    "groupTitle": "Bets"
+  },
+  {
+    "type": "get",
+    "url": "/bet/:collectionId",
+    "title": "Get a Bet",
+    "name": "Get_a_Bet",
+    "group": "Bets",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "collectionId",
+            "description": "<p>Id of the Bet.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "api/controllers/betController.js",
+    "groupTitle": "Bets"
+  },
+  {
+    "type": "get",
+    "url": "/bet/:page/:limit",
+    "title": "Get a paginated list of all Bets",
+    "name": "List_All_Bets",
+    "group": "Bets",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "page",
+            "description": "<p>The current page.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Int",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>The amount to return.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "api/controllers/betController.js",
+    "groupTitle": "Bets"
+  },
+  {
+    "type": "put",
+    "url": "/bet/:collectionId",
+    "title": "Update a Bet",
+    "name": "Update_a_Bet",
+    "group": "Bets",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "collectionId",
+            "description": "<p>Id of the Bet.</p>"
+          }
+        ]
+      }
+    },
+    "permission": [
+      {
+        "name": "authenticated creator"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "api/controllers/betController.js",
+    "groupTitle": "Bets"
+  },
+  {
+    "type": "post",
+    "url": "/user",
+    "title": "Create New User",
+    "name": "Create_New_User",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>Desired username (unique)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Desired password</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"User successfully registered.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/controllers/userController.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user/login",
+    "title": "Logs a User In",
+    "name": "Logs_a_User_In",
+    "group": "User",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>username</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success:",
+          "content": "HTTP/1.1 200 OK\n{\n     \"user\": {\n         \"_id\": \"_id\",\n         \"salt\": \"salt\",\n         \"hash\": \"hash\",\n         \"username\": \"username\",\n         \"__v\": 0\n     },\n     \"token\": \"JWT\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/controllers/userController.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "post",
+    "url": "/user/logout",
+    "title": "Logs a User Out",
+    "name": "Logs_a_User_Out",
+    "group": "User",
+    "success": {
+      "examples": [
+        {
+          "title": "Success:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"User successfully logged out.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "api/controllers/userController.js",
+    "groupTitle": "User"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "title": "An api for who2beton.",
+  "name": "who2beton",
+  "version": "1.0.0",
+  "description": "",
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2018-06-18T02:40:17.708Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.6"
+  }
+}
